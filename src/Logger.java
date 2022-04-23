@@ -1,10 +1,9 @@
 import java.io.FileWriter;
 
-public class Logger {
+public class Logger implements InitialBuffer,VerifiedBuffer{
     //FileReader logger=new FileReader("log.txt");
     //void log();
     //void save();
-    
     public void save(){
     try
     {
@@ -18,6 +17,8 @@ public class Logger {
     {
     System.out.println("Error al escribir");
     }
-    
+    }
+    void log(){
+
     }
 }
