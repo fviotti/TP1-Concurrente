@@ -17,17 +17,16 @@ public class Main {
         bufferI.add(new Data(3));
 
 
-
         //Agentes
         /*Writer lisanDROSS = new Writer(10,30, bufferI);
         Writer laPepaPug = new Writer(12,24, bufferI);
         Writer marcelitoComunica = new Writer(11,32, bufferI);
         Writer vinchaDeLaLuisa = new Writer(8,17, bufferI);*/
 
-        Reviewer afip = new Reviewer(13,16, bufferI, bufferV);
-        Reviewer controlParental = new Reviewer(9,11, bufferI, bufferV);
+        Reviewer afip = new Reviewer(13, 16, bufferI, bufferV);
+        Reviewer controlParental = new Reviewer(9, 11, bufferI, bufferV);
 
-        User stevenFranklin = new User(7,14);
+        User stevenFranklin = new User(7, 14);
         User elBrayatan = new User(10, 18);
 
         //Logger logger = new Logger();
