@@ -6,7 +6,7 @@ public class Data {
         this.id = id;
     }
 
-    public void review(){
+    public synchronized void review(){
         reviews++;
     }
 
