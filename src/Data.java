@@ -1,6 +1,6 @@
 public class Data {
     private int reviews = 0;
-    public int id;
+    private int id;
 
     public Data(int id){
         this.id = id;
@@ -12,5 +12,9 @@ public class Data {
 
     public int getReviews(){
         return reviews;
+    }
+
+    public int getID(){
+        return id;
     }
 }
