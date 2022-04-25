@@ -1,22 +1,18 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
-import java.util.ArrayList;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Reviewer extends Master implements Runnable {
     private int cantDatos;
-    private Data data = null;
+    private Data dataReview = null;
     private boolean stop = false;
-    ArrayList<Data> iOwnBuffer;
-    ArrayList<Data> vOwnBuffer;
+    private String name;
+    Buffer iOwnBuffer;
+    Buffer vOwnBuffer;
     ReadWriteLock lock;
 
-    public Reviewer(int minT, int maxT, ArrayList<Data> initialBuffer, ArrayList<Data> finalBuffer) {
-        super(minT, maxT);
+    public Reviewer(String name, int timeReview, Buffer initialBuffer, Buffer finalBuffer) {
+        super(timeReview, timeReview);
+        this.name = name;
         this.iOwnBuffer = initialBuffer;
         this.vOwnBuffer = finalBuffer;
         this.lock = new ReentrantReadWriteLock();
@@ -26,27 +22,31 @@ public class Reviewer extends Master implements Runnable {
         return this.cantDatos;
     }
 
-    public void review() {
-        if (this.data == null && !this.iOwnBuffer.isEmpty()) {
-            this.data = (Data)this.iOwnBuffer.get(0);
+    synchronized public void review() {
+        try {
+            lock.writeLock().lock();
+            if (dataReview == null && !this.iOwnBuffer.isEmpty()) {
+                dataReview = iOwnBuffer.getFirst();
+            }
+            dataReview.review();
+            Thread.sleep(super.maxT);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-        Data tempData = (Data)this.iOwnBuffer.get(this.iOwnBuffer.indexOf(this.data));
-        tempData.review();
-        int var10001 = tempData.getID();
-        System.out.printf("ID" + var10001 + "-> " + ((Data)this.iOwnBuffer.get(this.iOwnBuffer.indexOf(this.data))).getReviews() + "\n");
-        if (this.iOwnBuffer.indexOf(this.data) + 1 < this.iOwnBuffer.size()) {
-            this.data = (Data)this.iOwnBuffer.get(this.iOwnBuffer.indexOf(this.data) + 1);
+        finally{
+            lock.writeLock().unlock();
+        }
+        if (iOwnBuffer.hasNext(dataReview)) {
+            dataReview = iOwnBuffer.next(dataReview);
+            if(dataReview == null) this.stop = true;
         } else {
             this.stop = true;
         }
-
     }
 
     public void run() {
         while(!this.stop) {
             this.review();
         }
-
     }
 }
