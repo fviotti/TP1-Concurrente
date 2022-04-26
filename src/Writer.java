@@ -8,12 +8,14 @@ import static java.lang.Math.abs;
 
 public class Writer extends Master implements Runnable{
 
-    ArrayList<Data> ownBuffer = new ArrayList<Data>();
+    //ArrayList<Data> ownBuffer = new ArrayList<Data>();
+    Buffer ownBuffer;
     private final ReadWriteLock lock;
     int seed;
+    int cantReviewers = 9; //TODO:CAMBIAR CANT REVIWERS. ADAPTAR WRITER AL MAIN
 
 
-    public Writer(int minT, int maxT, ArrayList<Data> bufferI, int seed){
+    public Writer(int minT, int maxT, Buffer bufferI, int seed){
         super(minT, maxT);
         ownBuffer=bufferI;
         lock = new ReentrantReadWriteLock();
@@ -28,13 +30,13 @@ public class Writer extends Master implements Runnable{
         for(int i=0; i<250; i++){
             //int numeroRandom = ThreadLocalRandom.current().nextInt(min, max);
             int randomDuration = abs((int) (Math.random()*(this.minT-this.maxT)) + this.minT);
-            Data data = new Data(abs((new Random(seed+i)).nextInt()));
+            Data data = new Data(abs((new Random(seed+i)).nextInt()), cantReviewers);
             lock.writeLock().lock();
             try {
                 if (ownBuffer.size() < 100) {
                     //System.out.printf("%s esta agregando datos al buffer durante %d segundos \n", Thread.currentThread().getName(), randomDuration);
-                    ownBuffer.add(data);
-                    Thread.sleep(randomDuration);
+                    ownBuffer.setData(data);
+                    Thread.sleep(50);
                 }
             }
             catch(InterruptedException e){

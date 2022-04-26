@@ -15,14 +15,15 @@ public class Reviewer extends Master implements Runnable {
         this.name = name;
         this.iOwnBuffer = initialBuffer;
         this.vOwnBuffer = finalBuffer;
-        this.lock = new ReentrantReadWriteLock();
+        lock = new ReentrantReadWriteLock();
     }
 
     public int getCantDatos() {
         return this.cantDatos;
     }
 
-    synchronized public void review() {
+//    synchronized public void review() {
+    public void review() {
         try {
             lock.writeLock().lock();
             if (dataReview == null && !this.iOwnBuffer.isEmpty()) {

@@ -9,7 +9,8 @@ public class Buffer {
 
     public int size() {return buffer.size();}
 
-    public synchronized void setData(Data data){
+    //public synchronized void setData(Data data){
+    public void setData(Data data){
         if(buffer.size() < 1000){
             buffer.add(data);
         }
@@ -44,5 +45,12 @@ public class Buffer {
 
     public ArrayList<Data> getAllBuffer(){
         return buffer;
+    }
+
+    public boolean contains(Data data){
+        return buffer.contains(data);
+    }
+    public synchronized void deleteData(Data data){
+        buffer.remove(data);
     }
 }

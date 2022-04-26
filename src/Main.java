@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 /*
 import java.util.LinkedList;
 import java.util.Queue;
@@ -12,20 +13,24 @@ public class Main {
         // ArrayList<Data> bufferI = new ArrayList<>();
         // ArrayList<Data> bufferV = new ArrayList<>();
         Buffer bufferI = new Buffer(), bufferV = new Buffer();
+        int cantReviewers = 9;
+        //ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
         
-        for (int i = 0; i < 100; i++) {
-            bufferI.setData(new Data(i));
-        }
+//        for (int i = 0; i < 1000; i++) {
+//            bufferI.setData(new Data(i,cantReviewers));
+//        }
+
+
 
 
         //Agentes
-        /*Writer lisanDROSS = new Writer(10,30, bufferI);
-        Writer laPepaPug = new Writer(12,24, bufferI);
-        Writer marcelitoComunica = new Writer(11,32, bufferI);
-        Writer vinchaDeLaLuisa = new Writer(8,17, bufferI);*/
+        Writer lisanDROSS = new Writer(10,30, bufferI,10);
+        Writer laPepaPug = new Writer(12,24, bufferI,87);
+        Writer marcelitoComunica = new Writer(11,32, bufferI,32);
+        Writer vinchaDeLaLuisa = new Writer(8,17, bufferI,65);
 
-        Reviewer afip = new Reviewer("pepe",31, bufferI, bufferV);
-        Reviewer controlParental = new Reviewer("rick",25,  bufferI, bufferV);
+        Reviewer afip = new Reviewer("pepe",31, bufferI, bufferV); //TODO: Ver si meto el lock en el master o donde
+        Reviewer controlParental = new Reviewer("rick",25,  bufferI, bufferV);//TODO : tiene que estar compartido en los 3 actores
         Reviewer controlParental0 = new Reviewer("tutu",22,  bufferI, bufferV);
         Reviewer controlParental1 = new Reviewer("kaka",19,  bufferI, bufferV);
         Reviewer controlParental2 = new Reviewer("pito",32,  bufferI, bufferV);
@@ -34,17 +39,17 @@ public class Main {
         Reviewer controlParental5 = new Reviewer("jose",13,  bufferI, bufferV);
         Reviewer controlParental6 = new Reviewer("lola",51,  bufferI, bufferV);
 
-        User stevenFranklin = new User(7, 14);
-        User elBrayatan = new User(10, 18);
+        User stevenFranklin = new User(7, bufferI, bufferV);
+        User elBrayatan = new User(18, bufferI, bufferV);
 
         //Logger logger = new Logger();
         //
 
         //Creacion de hilos
-        /*Thread tW1 = new Thread(lisanDROSS);
+        Thread tW1 = new Thread(lisanDROSS);
         Thread tW2 = new Thread(laPepaPug);
         Thread tW3 = new Thread(marcelitoComunica);
-        Thread tW4 = new Thread(vinchaDeLaLuisa);*/
+        Thread tW4 = new Thread(vinchaDeLaLuisa);
 
         Thread tR1 = new Thread(afip);
         Thread tR2 = new Thread(controlParental);
@@ -63,10 +68,10 @@ public class Main {
         //
 
         //Lanzamiento de hilos
-        /*tW1.start();
+        tW1.start();
         tW2.start();
         tW3.start();
-        tW4.start();*/
+        tW4.start();
         tR1.start();
         tR2.start();
         tR3.start();
@@ -76,8 +81,8 @@ public class Main {
         tR7.start();
         tR8.start();
         tR9.start();
-        tU1.start();
-        tU2.start();
+//        tU1.start();
+//        tU2.start();
         //tLog.start();
         //
 
@@ -106,8 +111,11 @@ public class Main {
             e.printStackTrace();
         }
 
-        for (Data data : bufferI.getAllBuffer()) {
-            System.out.println("El dato |"+data.getID() + "| fue revisada ["+data.getReviews()+"] veces");
+        for (Data data : bufferV.getAllBuffer()) {
+            System.out.println("El dato |"+data.getID() + "| fue cargado y tiene ["+data.getReviews()+"] reviews ");
+
         }
+        System.out.println(bufferV.size()+" verified buffer size\n");
+        System.out.println(bufferI.size()+" initial buffer size");
     }
 }
