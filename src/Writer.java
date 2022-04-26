@@ -13,6 +13,7 @@ public class Writer extends Master implements Runnable{
     private final ReadWriteLock lock;
     int seed;
     int cantReviewers = 9; //TODO:CAMBIAR CANT REVIWERS. ADAPTAR WRITER AL MAIN
+    private static int createdData = 0;
 
 
     public Writer(int minT, int maxT, Buffer bufferI, int seed){

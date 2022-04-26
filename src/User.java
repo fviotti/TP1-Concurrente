@@ -11,4 +11,8 @@ public class User extends Master implements Runnable {
     public void run(){
 
     }
+
+    public static int getErasedData(){
+        return erasedData;
+    }
 }

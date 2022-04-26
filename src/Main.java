@@ -81,9 +81,9 @@ public class Main {
         tR7.start();
         tR8.start();
         tR9.start();
-//        tU1.start();
-//        tU2.start();
-        //tLog.start();
+        tU1.start();
+        tU2.start();
+        tLog.start();
         //
 
         while(  !(tR1.getState() == Thread.State.TERMINATED)
@@ -95,6 +95,12 @@ public class Main {
                 && !(tR7.getState() == Thread.State.TERMINATED)
                 && !(tR8.getState() == Thread.State.TERMINATED)
                 && !(tR9.getState() == Thread.State.TERMINATED)
+                && !(tU1.getState() == Thread.State.TERMINATED)
+                && !(tU2.getState() == Thread.State.TERMINATED)
+                && !(tW1.getState() == Thread.State.TERMINATED)
+                && !(tW2.getState() == Thread.State.TERMINATED)
+                && !(tW3.getState() == Thread.State.TERMINATED)
+                && !(tW4.getState() == Thread.State.TERMINATED)
             ){}
         try {
             Thread.sleep(1000);
@@ -115,7 +121,7 @@ public class Main {
             System.out.println("El dato |"+data.getID() + "| fue cargado y tiene ["+data.getReviews()+"] reviews ");
 
         }
-        System.out.println(bufferV.size()+" verified buffer size\n");
+        System.out.println(bufferV.size()+" verified buffer size");
         System.out.println(bufferI.size()+" initial buffer size");
     }
 }
