@@ -8,30 +8,28 @@ import static java.lang.Math.abs;
 
 public class Writer extends Master implements Runnable{
 
-    //ArrayList<Data> ownBuffer = new ArrayList<Data>();
+
     Buffer ownBuffer;
     private final ReadWriteLock lock;
-    int seed;
-    int cantReviewers = 9; //TODO:CAMBIAR CANT REVIWERS. ADAPTAR WRITER AL MAIN
+    int cantReviewers; //TODO:CAMBIAR CANT REVIWERS. ADAPTAR WRITER AL MAIN
     private static int createdData = 0;
 
-
-    public Writer(int minT, int maxT, Buffer bufferI, int seed){
+    public Writer(int minT, int maxT, Buffer bufferI, int cantReviewers){
         super(minT, maxT);
         ownBuffer=bufferI;
         lock = new ReentrantReadWriteLock();
-        this.seed = seed;
+        this.cantReviewers = cantReviewers;
     }
 
     //TODO: encontrar metodo que tire numeros random entre dos constantes y que no se repita
 
-
     @Override
     public void run(){
         for(int i=0; i<250; i++){
-            //int numeroRandom = ThreadLocalRandom.current().nextInt(min, max);
             int randomDuration = abs((int) (Math.random()*(this.minT-this.maxT)) + this.minT);
-            Data data = new Data(abs((new Random(seed+i)).nextInt()), cantReviewers);
+
+            Data data = new Data(abs((new Random(21341+i)).nextInt()), cantReviewers);
+
             lock.writeLock().lock();
             createdData++;
             try {
@@ -49,7 +47,9 @@ public class Writer extends Master implements Runnable{
             }
         }
     }
+
     public static int getCreatedData(){
         return createdData;
     }
+
 }
