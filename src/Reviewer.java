@@ -37,14 +37,11 @@ public class Reviewer extends Master implements Runnable {
                 dataReview.review();
                 processedData++;
                 if(dataReview.isVerified() && !vOwnBuffer.contains(dataReview)){
-//                System.out.println(name+" agrego el dato "+dataReview.getID()+" agregado a Buffer final");
                     vOwnBuffer.setData(dataReview);
                     loadedData++;
-
-//                System.out.println("Buffer final size: "+vOwnBuffer.size());
                 }
-                Thread.sleep(50);
             }
+            Thread.sleep(50);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

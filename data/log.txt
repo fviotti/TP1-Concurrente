@@ -1,0 +1,24 @@
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupación del “Buffer Inicial” 3:  
+Ocupación del “Buffer Final” 0:  
+Cantidad de datos procesados : 2 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupación del “Buffer Inicial” 98:  
+Ocupación del “Buffer Final” 36:  
+Cantidad de datos procesados : 82 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupación del “Buffer Inicial” 94:  
+Ocupación del “Buffer Final” 72:  
+Cantidad de datos procesados : 162 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupación del “Buffer Inicial” 90:  
+Ocupación del “Buffer Final” 90:  
+Cantidad de datos procesados : 206 
+**********************************************
+

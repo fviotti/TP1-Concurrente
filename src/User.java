@@ -26,8 +26,9 @@ public class User extends Master implements Runnable {
                 vBuffer.deleteData(usedData);
                 iBuffer.deleteData(usedData);
                 erasedData++;
-                Thread.sleep(50);
             }
+            Thread.sleep(500);
+
             if (vBuffer.hasNext(usedData)) {
                 usedData = vBuffer.next(usedData);
                 if (usedData == null) this.stop = true;
