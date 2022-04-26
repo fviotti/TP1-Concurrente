@@ -19,11 +19,16 @@ public class Data {
         return reviews;
     }
 
+
     public int getID(){
         return id;
     }
     
     public void setID(int id){
         this.id = id;
+    }
+
+    public Boolean isVerified(){
+        return reviews==cantReviewers;
     }
 }

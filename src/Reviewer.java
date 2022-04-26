@@ -1,6 +1,7 @@
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+
 public class Reviewer extends Master implements Runnable {
     //private int cantDatos;
     private Data dataReview = null;
@@ -9,6 +10,9 @@ public class Reviewer extends Master implements Runnable {
     Buffer iOwnBuffer;
     Buffer vOwnBuffer;
     ReadWriteLock lock;
+    private static int processedData = 0;
+    private static int loadedData = 0;
+
 
     public Reviewer(String name, int timeReview, Buffer initialBuffer, Buffer finalBuffer) {
         super(timeReview, timeReview);
@@ -49,15 +53,15 @@ public class Reviewer extends Master implements Runnable {
         }
         if (iOwnBuffer.hasNext(dataReview)) {
             dataReview = iOwnBuffer.next(dataReview);
-            if(dataReview == null) this.stop = true;
+            if (dataReview == null) this.stop = true;
         } else {
             this.stop = true;
         }
 
     }
-
+    @Override
     public void run() {
-        while(!this.stop) {
+        while (!this.stop && processedData<1000) {
             this.review();
         }
     }
