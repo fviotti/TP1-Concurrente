@@ -33,6 +33,7 @@ public class Writer extends Master implements Runnable{
             int randomDuration = abs((int) (Math.random()*(this.minT-this.maxT)) + this.minT);
             Data data = new Data(abs((new Random(seed+i)).nextInt()), cantReviewers);
             lock.writeLock().lock();
+            createdData++;
             try {
                 if (ownBuffer.size() < 100) {
                     //System.out.printf("%s esta agregando datos al buffer durante %d segundos \n", Thread.currentThread().getName(), randomDuration);
@@ -47,9 +48,8 @@ public class Writer extends Master implements Runnable{
                 lock.writeLock().unlock();
             }
         }
-
-
     }
-
-
+    public static int getCreatedData(){
+        return createdData;
+    }
 }

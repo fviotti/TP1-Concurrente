@@ -20,9 +20,6 @@ public class Main {
 //            bufferI.setData(new Data(i,cantReviewers));
 //        }
 
-
-
-
         //Agentes
         Writer lisanDROSS = new Writer(10,30, bufferI,10);
         Writer laPepaPug = new Writer(12,24, bufferI,87);
@@ -42,7 +39,7 @@ public class Main {
         User stevenFranklin = new User(7, bufferI, bufferV);
         User elBrayatan = new User(18, bufferI, bufferV);
 
-        //Logger logger = new Logger();
+        Logger logger = new Logger();
         //
 
         //Creacion de hilos
@@ -64,7 +61,8 @@ public class Main {
         Thread tU1 = new Thread(stevenFranklin);
         Thread tU2 = new Thread(elBrayatan);
 
-        //Thread tLog = new Thread(logger);
+        Thread tLog = new Thread(logger);
+        tLog.setPriority(Thread.MAX_PRIORITY);
         //
 
         //Lanzamiento de hilos
@@ -103,7 +101,7 @@ public class Main {
                 && !(tW4.getState() == Thread.State.TERMINATED)
             ){}
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1000); //TODO: PROBAR SIN JOIN Y SIN WHILE
             tR1.join();
             tR2.join();
             tR3.join();
@@ -113,15 +111,25 @@ public class Main {
             tR7.join();
             tR8.join();
             tR9.join();
+            tW1.join();
+            tW2.join();
+            tW3.join();
+            tW4.join();
+            tU1.join();
+            tU2.join();
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         for (Data data : bufferV.getAllBuffer()) {
             System.out.println("El dato |"+data.getID() + "| fue cargado y tiene ["+data.getReviews()+"] reviews ");
-
         }
         System.out.println(bufferV.size()+" verified buffer size");
         System.out.println(bufferI.size()+" initial buffer size");
+        System.out.println(Reviewer.getProcessedData() + " Data proccessed");
+        System.out.println(Writer.getCreatedData() + " Data created");
+        System.out.println(User.getErasedData() + " Data erased");
+        System.out.println(Reviewer.getLoadedData() + " Data loaded");
     }
 }
