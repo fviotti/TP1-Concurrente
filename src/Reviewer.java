@@ -2,7 +2,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Reviewer extends Master implements Runnable {
-    private int cantDatos;
+    //private int cantDatos;
     private Data dataReview = null;
     private boolean stop = false;
     private String name;
@@ -15,21 +15,32 @@ public class Reviewer extends Master implements Runnable {
         this.name = name;
         this.iOwnBuffer = initialBuffer;
         this.vOwnBuffer = finalBuffer;
-        this.lock = new ReentrantReadWriteLock();
+        lock = new ReentrantReadWriteLock();
     }
 
-    public int getCantDatos() {
+    /*public int getCantDatos() {
         return this.cantDatos;
-    }
+    }*/
 
-    synchronized public void review() {
+//    synchronized public void review() {
+    public void review() {
         try {
             lock.writeLock().lock();
             if (dataReview == null && !this.iOwnBuffer.isEmpty()) {
                 dataReview = iOwnBuffer.getFirst();
             }
-            dataReview.review();
-            Thread.sleep(super.maxT);
+            if(dataReview != null){
+                dataReview.review();
+                processedData++;
+                if(dataReview.isVerified() && !vOwnBuffer.contains(dataReview)){
+//                System.out.println(name+" agrego el dato "+dataReview.getID()+" agregado a Buffer final");
+                    vOwnBuffer.setData(dataReview);
+                    loadedData++;
+
+//                System.out.println("Buffer final size: "+vOwnBuffer.size());
+                }
+                Thread.sleep(50);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -42,11 +53,19 @@ public class Reviewer extends Master implements Runnable {
         } else {
             this.stop = true;
         }
+
     }
 
     public void run() {
         while(!this.stop) {
             this.review();
         }
+    }
+
+    static public int getProcessedData(){
+        return processedData;
+    }
+    static public int getLoadedData(){
+        return processedData;
     }
 }

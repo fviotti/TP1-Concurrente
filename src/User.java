@@ -1,11 +1,18 @@
 public class User extends Master implements Runnable {
 
 
-    public User(int minT, int maxT){
-        super(minT, maxT);
+    public User(int time, Buffer vBuffer, Buffer iBuffer){
+        super(time,time);
+        this.iBuffer = iBuffer;
+        this.vBuffer = vBuffer;
+        lock = new ReentrantReadWriteLock();
     }
 
     public void run(){
 
+    }
+
+    public static int getErasedData(){
+        return erasedData;
     }
 }
