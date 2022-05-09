@@ -1,55 +1,27 @@
-import java.util.ArrayList;
-import java.util.Queue;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.Random;
+import observer.EventListener;
 
-import static java.lang.Math.abs;
-
-public class Writer extends Master implements Runnable{
-
-
-    Buffer ownBuffer;
-    private final ReadWriteLock lock;
-    int cantReviewers; //TODO:CAMBIAR CANT REVIWERS. ADAPTAR WRITER AL MAIN
-    private static int createdData = 0;
-
-    public Writer(int minT, int maxT, Buffer bufferI, int cantReviewers){
-        super(minT, maxT);
-        ownBuffer=bufferI;
-        lock = new ReentrantReadWriteLock();
-        this.cantReviewers = cantReviewers;
+public class Writer implements Runnable, EventListener {    
+    private EventManager eventManager;
+    private boolean isEnd;
+    
+    public Writer(EventManager eventManager) {
+        this.eventManager = eventManager;
+        isEnd = false;
     }
 
-    //TODO: encontrar metodo que tire numeros random entre dos constantes y que no se repita
+    public void run() {
+        while(!isEnd){ 
+            synchronized (eventManager){
+                eventManager.setDataOnInitialBuffer(new Data());
+            }
+            Utils.mimir(Constants.TIME_WRITERS.get()); 
+        }
+        System.out.println("Finalizo hilo Writer"+Thread.currentThread().getName());
+    }
 
     @Override
-    public void run(){
-        for(int i=0; i<250; i++){
-            int randomDuration = abs((int) (Math.random()*(this.minT-this.maxT)) + this.minT);
-
-            Data data = new Data(abs((new Random(21341+i)).nextInt()), cantReviewers);
-
-            lock.writeLock().lock();
-            createdData++;
-            try {
-                if (ownBuffer.size() < 100) {
-                    //System.out.printf("%s esta agregando datos al buffer durante %d segundos \n", Thread.currentThread().getName(), randomDuration);
-                    ownBuffer.setData(data);
-                    Thread.sleep(50);
-                }
-            }
-            catch(InterruptedException e){
-                e.printStackTrace();
-            }
-            finally {
-                lock.writeLock().unlock();
-            }
-        }
+    public void update(int dataProcessed) {
+        isEnd = dataProcessed >= Constants.MAX_DATA_PROCESSED.get();   
     }
-
-    public static int getCreatedData(){
-        return createdData;
-    }
-
 }
+

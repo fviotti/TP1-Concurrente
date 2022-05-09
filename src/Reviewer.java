@@ -1,75 +1,55 @@
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.ArrayList;
 
+import observer.EventListener;
 
-public class Reviewer extends Master implements Runnable {
-    //private int cantDatos;
-    private Data dataReview = null;
-    private boolean stop = false;
-    private String name;
-    Buffer iOwnBuffer;
-    Buffer vOwnBuffer;
-    ReadWriteLock lock;
-    private static int processedData = 0;
-    private static int loadedData = 0;
+public class Reviewer implements Runnable, EventListener {
+    ArrayList<Data> nextReview; 
+    private boolean isEnd;
+    private EventManager eventManager;
 
-
-    public Reviewer(String name, int timeReview, Buffer initialBuffer, Buffer finalBuffer) {
-        super(timeReview, timeReview);
-        this.name = name;
-        this.iOwnBuffer = initialBuffer;
-        this.vOwnBuffer = finalBuffer;
-        lock = new ReentrantReadWriteLock();
+    public Reviewer( EventManager eventManager ) {
+        nextReview = new ArrayList<>();
+        isEnd = false;
+        this.eventManager = eventManager;
     }
 
-    /*public int getCantDatos() {
-        return this.cantDatos;
-    }*/
-
-//    synchronized public void review() {
-    public void review() {
-        try {
-            lock.writeLock().lock();
-            if (dataReview == null && !this.iOwnBuffer.isEmpty()) {
-                dataReview = iOwnBuffer.getFirst();
-            }
-            if(dataReview != null){
-                dataReview.review();
-                processedData++;
-                if(dataReview.isVerified() && !vOwnBuffer.contains(dataReview)){
-//                System.out.println(name+" agrego el dato "+dataReview.getID()+" agregado a Buffer final");
-                    vOwnBuffer.setData(dataReview);
-                    loadedData++;
-
-//                System.out.println("Buffer final size: "+vOwnBuffer.size());
-                }
-                Thread.sleep(50);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        finally{
-            lock.writeLock().unlock();
-        }
-        if (iOwnBuffer.hasNext(dataReview)) {
-            dataReview = iOwnBuffer.next(dataReview);
-            if (dataReview == null) this.stop = true;
-        } else {
-            this.stop = true;
-        }
-
-    }
-    @Override
     public void run() {
-        while (!this.stop && processedData<1000) {
-            this.review();
+        while(!isEnd){
+            synchronized(eventManager){
+            ArrayList<Data> bufferI = (eventManager.getInitialBuffer());
+
+            if(!bufferI.isEmpty()){
+                for (Data data : bufferI) {
+                    if(data != null && !isChecked(data)){
+                        data.review();
+                        eventManager.updateDataOnInitialBuffer(data);
+                        
+                        if(data.isReady()){
+                            eventManager.setDataOnValidatedBuffer(data);
+                        }
+                        nextReview.add(data);
+                        Utils.mimir(Constants.REVIEWERS.get());
+                    }
+                }
+            }
+            }
+            Utils.mimir(1);
         }
+        System.out.println("\nFinalizo hilo Reviewer " 
+                            + Thread.currentThread().getName() 
+                            + " con " + nextReview.size() + " Revisiones");
     }
 
-    static public int getProcessedData(){
-        return processedData;
+    private boolean isChecked(Data data){
+        for (Data dataCheck : nextReview) {
+            if(data == dataCheck) return true;
+        }
+        return false;
     }
-    static public int getLoadedData(){
-        return processedData;
+
+    @Override
+    public void update(int dataProcessed) {
+        isEnd = dataProcessed >= Constants.MAX_DATA_PROCESSED.get();
     }
+ 
 }

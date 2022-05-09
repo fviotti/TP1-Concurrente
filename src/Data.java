@@ -1,34 +1,34 @@
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 public class Data {
-    private int reviews = 0;
-    private int id;
-    private int cantReviewers;
 
-    public Data(){}
-    
-    public Data(int id, int cantReviewers){
-        this.id = id;
-        this.cantReviewers = cantReviewers;
+    private int reviews;
+    private ReadWriteLock lock;
+
+    public Data(){
+        reviews = 0;
+        lock = new ReentrantReadWriteLock();
     }
-
-    //public synchronized void review(){
-    public synchronized void review(){
+    
+    void review() {
+        lock.writeLock().lock();
         reviews++;
+        lock.writeLock().unlock();
     }
 
-    public int getReviews(){
-        return reviews;
+    int reviews(){
+        lock.readLock().lock();
+        int revs = reviews;
+        lock.readLock().unlock();
+        return revs;
     }
 
+    boolean isReady(){
+        lock.readLock().lock();
+        boolean isReady = Constants.REVIEWERS.get() == reviews;
+        lock.readLock().unlock();
+        return isReady;
 
-    public int getID(){
-        return id;
-    }
-    
-    public void setID(int id){
-        this.id = id;
-    }
-
-    public Boolean isVerified(){
-        return reviews==cantReviewers;
     }
 }
