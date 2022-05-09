@@ -1,0 +1,31 @@
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :5  
+Ocupacion del Buffer Final   :3  
+Cantidad de datos procesados : 1 
+****************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :22  
+Ocupacion del Buffer Final   :17  
+Cantidad de datos procesados : 283 
+****************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :25  
+Ocupacion del Buffer Final   :24  
+Cantidad de datos procesados : 584 
+****************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :18  
+Ocupacion del Buffer Final   :16  
+Cantidad de datos procesados : 890 
+****************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :3  
+Ocupacion del Buffer Final   :2  
+Cantidad de datos procesados : 1000 
+****************
+
+TIEMPO TOTAL DE EJECUCIÓN 8

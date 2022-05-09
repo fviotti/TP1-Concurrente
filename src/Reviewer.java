@@ -1,24 +1,55 @@
-public class Reviewer extends Master implements Runnable {
-    private int cantDatos;
-    private Data data;
+import java.util.ArrayList;
 
-    public Reviewer(int minT, int maxT){
-        super(minT, maxT);
+import observer.EventListener;
+
+public class Reviewer implements Runnable, EventListener {
+    ArrayList<Data> nextReview; 
+    private boolean isEnd;
+    private EventManager eventManager;
+
+    public Reviewer( EventManager eventManager ) {
+        nextReview = new ArrayList<>();
+        isEnd = false;
+        this.eventManager = eventManager;
     }
 
-    public void setData(Data data){
+    public void run() {
+        while(!isEnd){
+            synchronized(eventManager){
+            ArrayList<Data> bufferI = (eventManager.getInitialBuffer());
 
+            if(!bufferI.isEmpty()){
+                for (Data data : bufferI) {
+                    if(data != null && !isChecked(data)){
+                        data.review();
+                        eventManager.updateDataOnInitialBuffer(data);
+                        
+                        if(data.isReady()){
+                            eventManager.setDataOnValidatedBuffer(data);
+                        }
+                        nextReview.add(data);
+                        Utils.mimir(Constants.REVIEWERS.get());
+                    }
+                }
+            }
+            }
+            Utils.mimir(1);
+        }
+        System.out.println("\nFinalizo hilo Reviewer " 
+                            + Thread.currentThread().getName() 
+                            + " con " + nextReview.size() + " Revisiones");
     }
 
-    public Data getData(){
-        return data;
+    private boolean isChecked(Data data){
+        for (Data dataCheck : nextReview) {
+            if(data == dataCheck) return true;
+        }
+        return false;
     }
 
-    public int getCantDatos(){
-        return cantDatos;
+    @Override
+    public void update(int dataProcessed) {
+        isEnd = dataProcessed >= Constants.MAX_DATA_PROCESSED.get();
     }
-
-    public void run(){
-
-    }
+ 
 }
