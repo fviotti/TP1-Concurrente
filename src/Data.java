@@ -2,6 +2,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Data {
+
     private int reviews;
     private ReadWriteLock lock;
 
@@ -28,5 +29,6 @@ public class Data {
         boolean isReady = Constants.REVIEWERS.get() == reviews;
         lock.readLock().unlock();
         return isReady;
+
     }
 }

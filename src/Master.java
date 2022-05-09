@@ -1,17 +1,17 @@
 public abstract class Master {
     private int id;
-    private int time;
+    protected int minT;
+    protected int maxT;
 
     public Master(){
 
     }
     public Master(int minT, int maxT){
-
+        this.minT = minT;
+        this.maxT = maxT;
     }
 
-    protected int getTime(){
-        return time;
-    }
+
 
     protected int getID(){
         return id;

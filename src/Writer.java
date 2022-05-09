@@ -24,3 +24,4 @@ public class Writer implements Runnable, EventListener {
         isEnd = dataProcessed >= Constants.MAX_DATA_PROCESSED.get();   
     }
 }
+

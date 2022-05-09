@@ -7,7 +7,6 @@ public class User implements Runnable, EventListener {
     public User( EventManager eventManager ) {
         this.eventManager = eventManager;
         isEnd = false;
-    }
 
     public void run() {
         while(!isEnd){ 
