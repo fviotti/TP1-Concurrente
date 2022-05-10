@@ -1,3 +1,9 @@
+# Integrantes
+  Fernández Fassi, Esteban						200004930
+  Gerard, Brian Joel 							    40989936
+  Schneider, Jeremías						      41975644
+  Viotti, Franco								      42051491		
+
 # Enunciado
 En un sistema de adquisición de datos existen dos buffers y tres categorías de actores. Los buffers se denominan Buffer Inicial y Buffer de validados y tienen cada uno una capacidad de 100 datos (trabajan a pura pérdida, es decir si están llenos al venir un creador se descarta el dato). Los actores del sistema pueden ser Creadores de Datos, Revisores de Datos o Consumidores de Datos. El ciclo de funcionamiento normal del sistema comienza con la creación de un dato por parte de un “Creador de Datos”. Este proceso lleva un tiempo aleatorio en ms (no nulo, a elección del grupo); una vez creado es almacenado en el Buffer Inicial. En este buffer debe
 permanecer hasta que el total de “Revisores” hayan revisado el mismo, la revisión del dato lleva un tiempo en ms (no nulo a elección del grupo). Una vez que todos los “Revisores” hayan revisado el dato, el último “Revisor” guardará una copia del mismo en el Buffer de Validados. Los “Revisores” no pueden revisar más de una vez cada dato. Los consumidores de datos son los encargados de eliminar los datos de ambos buffers, siempre y cuando ya hayan sido validados; la eliminación de un dato lleva un tiempo en ms (no nulo a elección del grupo).
