@@ -42,6 +42,6 @@ La elección de los tiempos fueron para el writer 45ms, reviewers 115ms, users 2
 
 # Conclusiones:
 A través de varias pruebas e implementaciones, logramos observar los efectos de la sincronización. Es importante tener en cuenta de qué manera se puede acceder a los datos con secciones críticas, ya que corromperlas es más fácil de lo que parece.
-Se realizaron ensayos de uso del método sleep() propio de la clase Thread, utilizándolo dentro y fuera de la sección crítica para ver los resultados. Se observó que si éste se encuentra dentro, los tiempos de ejecución aumentan. Distinto de si se coloca afuera.
+Se realizaron ensayos de uso del método sleep() propio de la clase Thread, utilizándolo dentro y fuera de la sección crítica para ver los resultados. Se observó que si éste se encuentra dentro, los tiempos de ejecución aumentan ya que otros hilos no pueden acceder a esas secciones mientra el hilo esta en un estado de dormido. Distinto de si se coloca afuera.
 Se pudo observar distintos mecanismos de sincronización, aunque se optó por la utilización en su mayoría del synchronize, y en parte del lock. 
 
