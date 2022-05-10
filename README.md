@@ -1,7 +1,10 @@
 # Integrantes
   Fernández Fassi, Esteban						200004930
+  
   Gerard, Brian Joel 							    40989936
+  
   Schneider, Jeremías						      41975644
+  
   Viotti, Franco								      42051491		
 
 # Enunciado
