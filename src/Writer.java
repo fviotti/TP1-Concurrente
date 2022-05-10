@@ -13,7 +13,7 @@ public class Writer implements Runnable, EventListener {
 
     public void run() {
         while(!isEnd){ 
-            synchronized (eventManager){
+            synchronized (eventManager.getInitialBuffer()){
                 eventManager.setDataOnInitialBuffer(new Data());
                 dataCreated++;
             }

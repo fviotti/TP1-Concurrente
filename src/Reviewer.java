@@ -16,23 +16,28 @@ public class Reviewer implements Runnable, EventListener {
 
     public void run() {
         while(!isEnd){
-            synchronized(eventManager){
+            Data dataToReview = null;
+            synchronized(eventManager.getInitialBuffer()){
                 ArrayList<Data> bufferI = (eventManager.getInitialBuffer());
 
-            if(!bufferI.isEmpty()){
-                for (Data data : bufferI) {
-                    if(data != null && !isChecked(data)){
-                        data.review();
-                        eventManager.updateDataOnInitialBuffer(data);
-                        isIn = true;
-                        if(data.isReady()){
-                            eventManager.setDataOnValidatedBuffer(data);
+                if(!bufferI.isEmpty()){
+                    for (Data data : bufferI) {
+                        if(data != null && !isChecked(data)){
+                            data.review();
+                            eventManager.updateDataOnInitialBuffer(data);
+                            isIn = true;
+                            if(data.isReady()){
+                                dataToReview = data;
+                            }
+                            nextReview.add(data);
                         }
-                        nextReview.add(data);
-
                     }
                 }
             }
+            if(dataToReview != null){
+                synchronized(eventManager.getValidatedBuffer()){
+                    eventManager.setDataOnValidatedBuffer(dataToReview);
+                }
             }
             if (isIn){
                 isIn = false;

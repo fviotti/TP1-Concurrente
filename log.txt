@@ -1,30 +1,547 @@
 --------> ESTADO ACTUAL DE LA DATA <------- 
-Ocupacion del Buffer Inicial :6  
-Ocupacion del Buffer Final   :3  
-Cantidad de datos procesados : 3 
+Ocupacion del Buffer Inicial :42  
+Ocupacion del Buffer Final   :18  
+Cantidad de datos procesados : 33 
 **********************************************
 
 --------> ESTADO ACTUAL DE LA DATA <------- 
-Ocupacion del Buffer Inicial :16  
-Ocupacion del Buffer Final   :14  
-Cantidad de datos procesados : 284 
+Ocupacion del Buffer Inicial :45  
+Ocupacion del Buffer Final   :16  
+Cantidad de datos procesados : 48 
 **********************************************
 
 --------> ESTADO ACTUAL DE LA DATA <------- 
-Ocupacion del Buffer Inicial :20  
+Ocupacion del Buffer Inicial :48  
+Ocupacion del Buffer Final   :17  
+Cantidad de datos procesados : 59 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :46  
+Ocupacion del Buffer Final   :12  
+Cantidad de datos procesados : 72 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :49  
+Ocupacion del Buffer Final   :11  
+Cantidad de datos procesados : 84 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :52  
+Ocupacion del Buffer Final   :10  
+Cantidad de datos procesados : 98 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :61  
+Ocupacion del Buffer Final   :17  
+Cantidad de datos procesados : 108 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :64  
 Ocupacion del Buffer Final   :19  
-Cantidad de datos procesados : 581 
+Cantidad de datos procesados : 119 
 **********************************************
 
 --------> ESTADO ACTUAL DE LA DATA <------- 
-Ocupacion del Buffer Inicial :10  
-Ocupacion del Buffer Final   :2  
-Cantidad de datos procesados : 893 
+Ocupacion del Buffer Inicial :68  
+Ocupacion del Buffer Final   :22  
+Cantidad de datos procesados : 132 
 **********************************************
 
 --------> ESTADO ACTUAL DE LA DATA <------- 
-Ocupacion del Buffer Inicial :4  
+Ocupacion del Buffer Inicial :68  
+Ocupacion del Buffer Final   :20  
+Cantidad de datos procesados : 147 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :71  
+Ocupacion del Buffer Final   :22  
+Cantidad de datos procesados : 159 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :80  
+Ocupacion del Buffer Final   :28  
+Cantidad de datos procesados : 168 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :81  
+Ocupacion del Buffer Final   :27  
+Cantidad de datos procesados : 181 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :89  
+Ocupacion del Buffer Final   :31  
+Cantidad de datos procesados : 190 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :91  
+Ocupacion del Buffer Final   :32  
+Cantidad de datos procesados : 201 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :96  
+Ocupacion del Buffer Final   :36  
+Cantidad de datos procesados : 211 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :38  
+Cantidad de datos procesados : 223 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :35  
+Cantidad de datos procesados : 236 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :33  
+Cantidad de datos procesados : 248 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :32  
+Cantidad de datos procesados : 260 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :31  
+Cantidad de datos procesados : 271 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :30  
+Cantidad de datos procesados : 283 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :30  
+Cantidad de datos procesados : 295 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :28  
+Cantidad de datos procesados : 304 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :25  
+Cantidad de datos procesados : 316 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :22  
+Cantidad de datos procesados : 329 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :24  
+Cantidad de datos procesados : 341 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :22  
+Cantidad de datos procesados : 353 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :23  
+Cantidad de datos procesados : 363 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :22  
+Cantidad de datos procesados : 372 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :18  
+Cantidad de datos procesados : 385 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :17  
+Cantidad de datos procesados : 396 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :17  
+Cantidad de datos procesados : 408 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :16  
+Cantidad de datos procesados : 419 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :16  
+Cantidad de datos procesados : 431 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :12  
+Cantidad de datos procesados : 444 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :14  
+Cantidad de datos procesados : 456 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :11  
+Cantidad de datos procesados : 469 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :8  
+Cantidad de datos procesados : 481 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :10  
+Cantidad de datos procesados : 490 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :10  
+Cantidad de datos procesados : 502 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :8  
+Cantidad de datos procesados : 514 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :7  
+Cantidad de datos procesados : 525 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :4  
+Cantidad de datos procesados : 537 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :6  
+Cantidad de datos procesados : 547 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :6  
+Cantidad de datos procesados : 558 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :6  
+Cantidad de datos procesados : 569 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :5  
+Cantidad de datos procesados : 580 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
 Ocupacion del Buffer Final   :3  
+Cantidad de datos procesados : 593 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :6  
+Cantidad de datos procesados : 604 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :5  
+Cantidad de datos procesados : 616 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :3  
+Cantidad de datos procesados : 628 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :2  
+Cantidad de datos procesados : 639 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :3  
+Cantidad de datos procesados : 649 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :97  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 659 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :98  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 670 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 682 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 694 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 705 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 712 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 720 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 730 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 741 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 752 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 759 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 768 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 778 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 788 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 798 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 808 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 817 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 826 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 835 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 842 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 852 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 861 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 869 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 879 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 887 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 898 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 908 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 919 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 929 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 938 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 949 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 956 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 967 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 976 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :100  
+Ocupacion del Buffer Final   :1  
+Cantidad de datos procesados : 986 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
+Cantidad de datos procesados : 998 
+**********************************************
+
+--------> ESTADO ACTUAL DE LA DATA <------- 
+Ocupacion del Buffer Inicial :99  
+Ocupacion del Buffer Final   :0  
 Cantidad de datos procesados : 1000 
 **********************************************
 
+TIEMPO TOTAL DE EJECUCI?N 10035

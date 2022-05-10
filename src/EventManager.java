@@ -11,7 +11,7 @@ public class EventManager {
     private ArrayList<Data> initialBuffer;
     private ArrayList<Data> validatedBuffer;
     List<EventListener> listeners;
-    private ReadWriteLock lockDataProcessed, lockInitialB, lockValidatedB;
+    // private ReadWriteLock lockDataProcessed, lockInitialB, lockValidatedB;
 
     public EventManager() {
         initialBuffer = new ArrayList<>();   // Buffer inicial
@@ -19,9 +19,9 @@ public class EventManager {
         dataProcessed = 0;
         dataWritten = 0;
         listeners = new LinkedList<>();
-        lockDataProcessed = new ReentrantReadWriteLock();
-        lockInitialB = new ReentrantReadWriteLock(true);
-        lockValidatedB = new ReentrantReadWriteLock();
+        // lockDataProcessed = new ReentrantReadWriteLock();
+        // lockInitialB = new ReentrantReadWriteLock(true);
+        // lockValidatedB = new ReentrantReadWriteLock();
     }
 
     public void subscribe(EventListener listener) {
@@ -32,10 +32,10 @@ public class EventManager {
         Aumenta la data procesada
     */
     public void increment(){
-        //lockDataProcessed.writeLock().lock();
+        // lockDataProcessed.writeLock().lock();
         dataProcessed++;
-        notify(dataProcessed); //Para que el notify?
-        //lockDataProcessed.writeLock().unlock();
+        notify(dataProcessed);
+        // lockDataProcessed.writeLock().unlock();
     }
 
     private void notify(int dataProcessed) {
@@ -68,12 +68,12 @@ public class EventManager {
         return datita;
     }
     public void setDataOnInitialBuffer(Data data){
-        //lockInitialB.writeLock().lock();
+        // lockInitialB.writeLock().lock();
         if(initialBuffer.size() < Constants.LIMIT_BUFFER.get()){
             initialBuffer.add(data);
             dataWritten++;
         }
-        //lockInitialB.writeLock().unlock();
+        // lockInitialB.writeLock().unlock();
     }
     public void updateDataOnInitialBuffer(Data data){
         //lockInitialB.writeLock().lock();
@@ -81,9 +81,9 @@ public class EventManager {
         //lockInitialB.writeLock().unlock();
     }
     public void removeDataOnInitialBuffer(Data data){
-        //lockInitialB.writeLock().lock();
+        // lockInitialB.writeLock().lock();
         initialBuffer.remove(data);
-        //lockInitialB.writeLock().unlock();
+        // lockInitialB.writeLock().unlock();
     }
 
     public ArrayList<Data> getValidatedBuffer(){
@@ -94,16 +94,16 @@ public class EventManager {
         return datita;
     }
     public void setDataOnValidatedBuffer(Data data){
-        //lockValidatedB.writeLock().lock();
+        // lockValidatedB.writeLock().lock();
             if(validatedBuffer.size() < Constants.LIMIT_BUFFER.get()){
                 validatedBuffer.add(data);
             }
-        //lockValidatedB.writeLock().unlock();
+        // lockValidatedB.writeLock().unlock();
     }
     public void removeDataOnValidatedBuffer(Data data){
-        //lockValidatedB.writeLock().lock();
+        // lockValidatedB.writeLock().lock();
         validatedBuffer.remove(data);
-        //lockValidatedB.writeLock().unlock();
+        // lockValidatedB.writeLock().unlock();
     }
     public Data getDataOnValidatedBuffer(){
         Data data;

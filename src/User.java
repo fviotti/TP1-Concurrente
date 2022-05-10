@@ -13,21 +13,22 @@ public class User implements Runnable, EventListener {
     }
 
     public void run() {
-        while(!isEnd){ 
-            synchronized (eventManager){
-                Data data = eventManager.getDataOnValidatedBuffer();
-                if(data != null){
-                    if(!isEnd){
-                            isIn = true;
-                            eventManager.removeDataOnInitialBuffer(data);
-                            eventManager.removeDataOnValidatedBuffer(data);
-                            eventManager.increment();
-                            dataUsed++;
-                            //Utils.mimir(Constants.TIME_USERS.get());
-                    }
+        while(!isEnd){
+            Data data = null;
+            synchronized (eventManager.getValidatedBuffer()){
+                data = eventManager.getDataOnValidatedBuffer();
+                if(data != null && !isEnd){
+                    isIn = true;
+                    eventManager.removeDataOnValidatedBuffer(data);
+                    
                 }
             }
             if (isIn){
+                synchronized (eventManager.getInitialBuffer()){
+                    eventManager.removeDataOnInitialBuffer(data);
+                    eventManager.increment();
+                    dataUsed++;
+                }
                 isIn = false;
                 Utils.mimir(Constants.TIME_USERS.get());
             }else{
